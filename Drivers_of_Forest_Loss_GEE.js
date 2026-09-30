@@ -1,3 +1,10 @@
+// Title: Probability of hard-commodity (mining) driven forest loss, Ghana
+// Dataset: WRI/Google Global Drivers of Forest Loss, 1 km, 2001-2024
+// Note: probability bands are rescaled to 0-1 (x 0.004)
+// Region of interest: Ghana
+var ghana = ee.FeatureCollection('FAO/GAUL/2015/level0')
+  .filter(ee.Filter.eq('ADM0_NAME', 'Ghana'));
+var geometry = ghana.geometry();
 Map.setCenter(-1,7.7,6)
 
 var drivers = ee.Image('projects/landandcarbon/assets/wri_gdm_drivers_forest_loss_1km/v1_2_2001_2024')
